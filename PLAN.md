@@ -59,4 +59,8 @@ responsibility per module, no hardcoded secrets).
 6. Tests use mocked AWS calls — no real API calls in test suite.
 7. `snake_case` for files/functions, `PascalCase` for classes.
 8. Single shared `requirements.txt`, pinned versions.
-9. follow proper branching and git commit message. create development, main branch, each phase create pulll request to development. 
+9. Branching: `main` (stable) <- `development` (integration) <- `feature/<name>` (one per phase/task).
+   Each phase's work happens on its own `feature/*` branch off `development`,
+   opened as a PR into `development` when done. `main` is only fast-forwarded
+   from `development` at stable checkpoints.
+
